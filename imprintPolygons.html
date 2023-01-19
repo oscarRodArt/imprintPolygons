@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body, html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      canvas {
+        height: 100%;
+        width: 100%;
+        background: rgb(0,0,0);
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 62%, rgba(111,111,111,1) 76%, rgba(56,56,56,1) 100%);
+        animation: dynamic 1.3s infinite;
+      }
+
+      @keyframes dynamic {
+        0% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 62%, rgba(111,111,111,1) 76%, rgba(56,56,56,1) 100%);
+        }
+
+         6.25% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 63.4%, rgba(111,111,111,1) 76%, rgba(61,61,61,1) 100%);
+          }
+
+         12.5% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 64.8%, rgba(111,111,111,1) 76%, rgba(61,61,61,1) 100%);
+          }
+
+         18.75% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 66.2%, rgba(111,111,111,1) 76%, rgba(61,61,61,1) 100%);
+          }
+
+         25% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 67.6%, rgba(111,111,111,1) 76%, rgba(66,66,66,1) 100%);
+          }
+
+         31.25% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 69%, rgba(111,111,111,1) 76%, rgba(71,71,71,1) 100%);
+          }
+
+         37.5% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 70.4%, rgba(111,111,111,1) 76%, rgba(71,71,71,1) 100%);
+          }
+
+         43.75% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 71.8%, rgba(111,111,111,1) 76%, rgba(71,71,71,1) 100%);
+          }
+
+        50% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 72.2%, rgba(111,111,111,1) 76%, rgba(76,76,76,1) 100%);
+          }
+
+        56.25% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 71.8%, rgba(111,111,111,1) 76%, rgba(71,71,71,1) 100%);
+          }
+
+        62.5% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 70.4%, rgba(111,111,111,1) 76%, rgba(71,71,71,1) 100%);
+          }
+
+        68.75% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 69%, rgba(111,111,111,1) 76%, rgba(71,71,71,1) 100%);
+          }
+
+        75% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 67.6%, rgba(111,111,111,1) 76%, rgba(66,66,66,1) 100%);
+          }
+
+        80.25% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 66.2%, rgba(111,111,111,1) 76%, rgba(61,61,61,1) 100%);
+          }
+
+        86.5% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 64.8%, rgba(111,111,111,1) 76%, rgba(61,61,61,1) 100%);
+          }
+
+        92.75% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 63.4%, rgba(111,111,111,1) 76%, rgba(61,61,61,1) 100%);
+          }
+
+        100% {
+          background: rgb(0,0,0);
+          background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 62%, rgba(111,111,111,1) 76%, rgba(56,56,56,1) 100%);
+        }
+      }
+
+      h2 {
+        position: absolute;
+        width: 69%;
+        left: 16.5%;
+        font-family: sans-serif;
+        color: #6ACA96;
+      }
+
+    </style>
+  </head>
+  <body>
+      <h2>Disclaimer: This page mirrors the current state of the original work on the NFT chain.</h2>
+    <canvas id="canvas" width="1280" height="739">
+      <h1>Imagine</h1>
+    </canvas>
+    <script type="text/javascript">
+      var largestPolygon = 5;
+      var largestSize = 80;
+
+      //Draw first word
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+      context.fillStyle = "white";
+      context.font = "bold 20px Arial";
+      context.fillText("IMAGINE", (canvas.width / 2) - 38, (canvas.height / 2));
+
+      function createGradient(stopCols) {
+        var gradient = context.createLinearGradient(0, 0, 1280, 739);
+        var interval = 0.3 / stopCols.length;
+        for (i = 0; i < stopCols.length; i++) {
+          gradient.addColorStop((0.4 + i * interval), stopCols[i]);
+        }
+        return gradient;
+      }
+
+      function drawPolygon(sides, size, gradient, linew) {
+        var numberOfSides = sides,
+        size = size,
+        Xcenter = (canvas.width / 2),
+        Ycenter = (canvas.height / 2);
+
+        context.beginPath();
+        context.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));
+
+        for (var i = 1; i <= numberOfSides;i += 1) {
+          context.lineTo (Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides), Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides));
+        }
+
+        context.strokeStyle = gradient;
+        context.lineWidth = linew;
+        context.stroke();
+      }
+
+      function addPolygon(colors) {
+        largestPolygon++;
+        largestSize = largestSize + 20;
+        drawPolygon(largestPolygon, largestSize, createGradient(colors), 2);
+      }
+
+    </script>
+  </body>
+</html>
