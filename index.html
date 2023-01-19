@@ -10,6 +10,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
+        font-family: sans-serif;
       }
 
       canvas {
@@ -115,14 +116,91 @@
         color: #6ACA96;
       }
 
+      .info {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.6);
+        height: 80%;
+        width: 85%;
+        margin-left: 7.5%;
+        margin-top: 6.5%;
+        border-radius: 5px;
+      }
+
+      .info h3 {
+        color: white;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 2%;
+      }
+
+      article {
+        color: white;
+      }
+
+      article img {
+        width: 30%;
+      }
+
+      /* .o0, .o1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+      } */
+
+      .o0 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+      }
+
+      .o1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+      }
+
+      .o4 {
+        position: absolute;
+        top: 24%;
+        left: 41%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .o4 img {
+        width: 100%;
+      }
+
+      .hidden {
+        display: none;
+      }
+
     </style>
   </head>
   <body>
-      <h2>Disclaimer: This page mirrors the current state of the original work on the NFT chain.</h2>
+    <div class="info hidden">
+      <h3>This canvas is a mirror from an NFT art work. Each new owner that buys the work gets to add a polygon with a chosen color gradient, with previous owner imprints staying on the canvas. Sample chain:-</h3>
+      <article>
+        <br> <p class='o0'>Owner 0 <img src="o0.gif" alt=""></p>
+        <br> <p class='o1'>Owner 1 <img src="o1.gif" alt=""></p>
+        <br> <p class='o4'>Owner 4 <img src="o4.gif" alt=""></p>
+      </article>
+
+    </div>
+      <h2>Disclaimer: This page mirrors the current state of the original work on the NFT chain. <img src="i.png" alt="" style="width: 28px; position: absolute; margin-left: 5px;" id="infoBtn"> </h2>
     <canvas id="canvas" width="1280" height="739">
       <h1>Imagine</h1>
     </canvas>
     <script type="text/javascript">
+
+    document.getElementById("infoBtn").addEventListener("click", toggleInfo);
+
+    function toggleInfo() {
+      document.querySelector('.info').classList.toggle('hidden');
+    }
+
+
       var largestPolygon = 5;
       var largestSize = 80;
 
